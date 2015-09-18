@@ -1,0 +1,17 @@
+Creating Hbase table with thresholds
+no rows deleted
+Time: 4.343 sec(s)
+
+no rows upserted
+Time: 1.491 sec(s)
+
+no rows deleted
+Time: 3.862 sec(s)
+
+no rows upserted
+Time: 1.385 sec(s)
+
+csv columns from database.
+CSV Upsert complete. 401 rows upserted
+Time: 1.557 sec(s)
+

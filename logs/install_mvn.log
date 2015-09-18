@@ -1,0 +1,9 @@
+Loaded plugins: fastestmirror, priorities
+Setting up Install Process
+Loading mirror speeds from cached hostfile
+ * base: dist1.800hosting.com
+ * epel: reflector.westga.edu
+ * extras: mirror.millry.co
+ * updates: reflector.westga.edu
+Package apache-maven-3.2.5-1.el6.noarch already installed and latest version
+Nothing to do

@@ -1,0 +1,23 @@
+Initialized empty Git repository in /opt/banana/banana/.git/
+Loaded plugins: fastestmirror, priorities
+Setting up Install Process
+Loading mirror speeds from cached hostfile
+ * base: dist1.800hosting.com
+ * epel: reflector.westga.edu
+ * extras: mirror.millry.co
+ * updates: reflector.westga.edu
+Package ant-1.7.1-13.el6.x86_64 already installed and latest version
+Nothing to do
+Buildfile: build.xml
+
+build-war:
+      [war] Building war: /opt/banana/latest/build/banana-17.war
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+Starting Solr...
+Waiting for Solr to start...
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+<lst name="responseHeader"><int name="status">0</int><int name="QTime">4929</int></lst><str name="core">tweets</str>
+</response>
