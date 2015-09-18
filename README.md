@@ -111,12 +111,10 @@ git clone git@github.com:vedantja/hdp_nifi_twitter_demo.git
 https://apps.twitter.com > sign in > create new app > fill anything > create access tokens
 - Then enter the 4 values into the appropriate fields (see screenshot)
 ```
-
-
-oauth.consumerKey=
-oauth.consumerSecret=
-oauth.accessToken=
-oauth.accessTokenSecret=
+consumerKey
+consumerSecret
+oauth.accessToken
+oauth.accessTokenSecret
 ```
 
 - Run below to setup demo (one time): start Ambari/HBase/Kafka/Storm and install maven, solr, banana -may take 10 min
