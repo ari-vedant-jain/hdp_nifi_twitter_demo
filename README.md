@@ -11,6 +11,9 @@
 <!--  - [Guilherme Braccialli](https://github.com/gbraccialli) for helping to maintain the code and adding sentiment analysis component -->
 <!--  - [Tim Veil](https://github.com/timveil) for developing the original banana dashboard-->
 
+Thanks to [Ryan Templeton](https://github.com/rtempleton) & [Paul Hargis](https://github.com/pmhargisNG10) with their help in building the demo. 
+
+This Demo is built by modifying the [Hortonworks Twitter Demo](https://github.com/hortonworks-gallery/hdp22-twitter-demo) 
 ------------------
 
 #### Purpose: Monitor Twitter stream for S&P 500 companies to identify & act on unexpected increases in tweet volume
@@ -100,14 +103,16 @@ ssh root@sandbox.hortonworks.com
 
 - Pull latest code/scripts
 ```
-git clone https://github.com/hortonworks-gallery/hdp22-twitter-demo.git	
+git clone git@github.com:vedantja/hdp_nifi_twitter_demo.git
+
 ```
     
-- Twitter4J requires you to have a Twitter account and obtain developer keys by registering an "app". Create a Twitter account and app and get your consumer key/token and access keys/tokens:
+- NiFi Garden Hose Processor requires you to have a Twitter account and obtain developer keys by registering an "app". Create a Twitter account and app and get your consumer key/token and access keys/tokens:
 https://apps.twitter.com > sign in > create new app > fill anything > create access tokens
-- Then enter the 4 values into the file below in the sandbox
+- Then enter the 4 values into the appropriate fields (see screenshot)
 ```
-vi /root/hdp22-twitter-demo/kafkaproducer/twitter4j.properties
+
+
 oauth.consumerKey=
 oauth.consumerSecret=
 oauth.accessToken=
@@ -123,31 +128,31 @@ cd /root/hdp22-twitter-demo
 ------------------
 
 
-##### Kafka basics - (optional)
+<!--##### Kafka basics - (optional)-->
 
-```
-#check if kafka already started
-ps -ef | grep kafka
+<!--```-->
+<!--#check if kafka already started-->
+<!--ps -ef | grep kafka-->
 
-#if not, start kafka
-nohup /usr/hdp/current/kafka-broker/bin/kafka-server-start.sh /usr/hdp/current/kafka-broker/config/server.properties &
+<!--#if not, start kafka-->
+<!--nohup /usr/hdp/current/kafka-broker/bin/kafka-server-start.sh /usr/hdp/current/kafka-broker/config/server.properties &-->
 
-#create topic
-/usr/hdp/current/kafka-broker/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+<!--#create topic-->
+<!--/usr/hdp/current/kafka-broker/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test-->
 
-#list topic
-/usr/hdp/current/kafka-broker/bin/kafka-topics.sh --zookeeper localhost:2181 --list | grep test
+<!--#list topic-->
+<!--/usr/hdp/current/kafka-broker/bin/kafka-topics.sh --zookeeper localhost:2181 --list | grep test-->
 
-#start a producer and enter text on few lines
-/usr/hdp/current/kafka-broker/bin/kafka-console-producer.sh --broker-list localhost:6667 --topic test
+<!--#start a producer and enter text on few lines-->
+<!--/usr/hdp/current/kafka-broker/bin/kafka-console-producer.sh --broker-list localhost:6667 --topic test-->
 
-#start a consumer in a new terminal your text appears in the consumer
-/usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test --from-beginning
+<!--#start a consumer in a new terminal your text appears in the consumer-->
+<!--/usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test --from-beginning-->
 
-#delete topic
-/usr/hdp/current/kafka-broker/bin/kafka-run-class.sh kafka.admin.DeleteTopicCommand --zookeeper localhost:2181 --topic test
-```
--------------------------------
+<!--#delete topic-->
+<!--/usr/hdp/current/kafka-broker/bin/kafka-run-class.sh kafka.admin.DeleteTopicCommand --zookeeper localhost:2181 --topic test-->
+<!--```-->
+<!----------------------------------->
 
 #####  Run Twitter demo 
 
@@ -158,8 +163,8 @@ http://en.wikipedia.org/wiki/List_of_S%26P_500_companies
 
 - (Optional) Generate securities csv from above page and review the securities.csv generated. The last field is the generated tweet volume threshold 
 ```
-/root/hdp22-twitter-demo/fetchSecuritiesList/rungeneratecsv.sh
-cat /root/hdp22-twitter-demo/fetchSecuritiesList/securities.csv
+/root/hdp_nifi_twitter_demo/fetchSecuritiesList/rungeneratecsv.sh
+cat /root/hdp_nifi_twitter_demo/fetchSecuritiesList/securities.csv
 ```
 
 - (Optional) for future runs: you can add other stocks/hashtags to monitor to the csv (make sure no trailing spaces/new lines at the end of the file). Find these at http://mobile.twitter.com/trends
@@ -185,14 +190,14 @@ hive -e 'desc tweets_text_partition'
 
 - **Start Storm Twitter topology** to generate alerts into an HBase table for stocks whose tweet volume is higher than threshold this will also read tweets into Hive/HDFS/local disk/Solr/Banana. The first time you run below, maven will take 15min to download dependent jars
 ```
-cd /root/hdp22-twitter-demo
+cd /root/hdp_nifi_twitter_demo
 ./start-demo.sh
 #once storm topology is submitted, press control-C
 ```
 
 - (Optional) Other modes the topology could be started in future runs if you want to clean the setup or run locally (not on the storm running on the sandbox)
 ```
-cd /root/hdp22-twitter-demo/stormtwitter-mvn
+cd /root/hdp_nifi_twitter_demo/twitterstorm
 ./runtopology.sh runOnCluster clean
 ./runtopology.sh runLocally skipclean
 ```
@@ -200,11 +205,12 @@ cd /root/hdp22-twitter-demo/stormtwitter-mvn
 - open storm UI and confirm topology was created
 http://sandbox.hortonworks.com:8744/
 
+<!--
 - **Start Kafka producer**: In a new terminal, compile and run kafka producer to start producing tweets containing first 400 stock symbols values from csv
 ```
 /root/hdp22-twitter-demo/kafkaproducer/runkafkaproducer.sh
 ```
-
+-->
 ------------------
 
 
