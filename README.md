@@ -75,7 +75,7 @@ cd /root/hdp_nifi_twitter_demo
 #start Nifi processor
 
 1. Using Browser, go to http://sandbox.hortonworks.com:<port#>/nifi
-2. Upload 
+2. Upload the XML file into NiFi templates section in the UI. The XML file is under /root/hdp_nifi_twitter_demo/nifi-template
 ```
 - [Observe results](https://github.com/hortonworks-gallery/hdp22-twitter-demo#observe-results) in HDFS, Hive, Solr/Banana, HBase
 
