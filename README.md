@@ -55,12 +55,12 @@ Listen for Twitter streams related to S&P 500 companies
 
 ---------------------
  
-#### Option 1: Setup demo using prebuilt VM based on HDP 2.3 sandbox - WIP
+#### Option 1: Setup demo using prebuilt VM based on HDP 2.3 sandbox
 
 - Download VM from [here](). Import it into VMWare Fusion and start it up. 
 - Find the IP address of the VM and add an entry into your machines hosts file e.g.
 ```
-192.168.191.241 sandbox.hortonworks.com sandbox    
+192.168.191.133 sandbox.hortonworks.com sandbox    
 ```
 - Connect to the VM via SSH (password hadoop)
 ```
