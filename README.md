@@ -1,15 +1,15 @@
-## Streaming workshop demo
+## NiFi Twitter Storm Demo with Banana Visualization
 
-This demo was part of below technical webinar workshops
-  - "Real Time Monitoring with Hadoop" - Slides and webinar recording are available [here](http://hortonworks.com/partners/learn/#rt)
-  - "Search Workshop" - Slides and webinar recording are available [here](http://hortonworks.com/partners/learn/#search)
+<!--This demo was part of below technical webinar workshops-->
+<!--  - "Real Time Monitoring with Hadoop" - Slides and webinar recording are available [here](http://hortonworks.com/partners/learn/#rt)-->
+<!--  - "Search Workshop" - Slides and webinar recording are available [here](http://hortonworks.com/partners/learn/#search)-->
 
 
-Author: [Ali Bajwa](https://www.linkedin.com/in/aliabajwa)
+<!--Author: [Ali Bajwa](https://www.linkedin.com/in/aliabajwa)-->
 
-With special thanks to:
-  - [Guilherme Braccialli](https://github.com/gbraccialli) for helping to maintain the code and adding sentiment analysis component 
-  - [Tim Veil](https://github.com/timveil) for developing the original banana dashboard
+<!--With special thanks to:-->
+<!--  - [Guilherme Braccialli](https://github.com/gbraccialli) for helping to maintain the code and adding sentiment analysis component -->
+<!--  - [Tim Veil](https://github.com/timveil) for developing the original banana dashboard-->
 
 ------------------
 
@@ -31,24 +31,24 @@ Listen for Twitter streams related to S&P 500 companies
 - Demo setup:
 	- Either download and start prebuilt VM
 	- Start HDP 2.3 sandbox and run provided scripts to setup demo 
-	- For HDP 2.2 version of instructions see [here](https://github.com/hortonworks-gallery/hdp22-twitter-demo/blob/master/README-22.md)
+
 
 ------------------
 	
-#### Contents
+<!--#### Contents-->
 
-1. [Option 1: Setup demo using prebuilt VM based on HDP 2.3 sandbox](https://github.com/hortonworks-gallery/hdp22-twitter-demo#option-1-setup-demo-using-prebuilt-vm-based-on-hdp-23-sandbox)
-2. [Option 2: Setup demo via scripts on vanilla HDP 2.3 sandbox](https://github.com/hortonworks-gallery/hdp22-twitter-demo#option-2-setup-demo-via-scripts-on-vanilla-hdp-23-sandbox)
-3. [Kafka basics - optional](https://github.com/hortonworks-gallery/hdp22-twitter-demo#kafka-basics---optional)
-4. [Run demo](https://github.com/hortonworks-gallery/hdp22-twitter-demo#run-twitter-demo) to monitor Tweets about S&P 500 securities in realtime
-5. [Stop demo](https://github.com/hortonworks-gallery/hdp22-twitter-demo#to-stop-collecting-tweets)
-5. [Troubleshooting](https://github.com/hortonworks-gallery/hdp22-twitter-demo#troubleshooting)
-6. [Observe results](https://github.com/hortonworks-gallery/hdp22-twitter-demo#observe-results) in HDFS, Hive, Solr/Banana, HBase
-7. [Use Zeppelin to create charts to analyze tweets - optional](https://github.com/hortonworks-gallery/hdp22-twitter-demo#use-zeppelin-to-create-charts-to-analyze-tweets)
-8. [Import data into BI tools - optional](https://github.com/hortonworks-gallery/hdp22-twitter-demo#import-data-to-bi-tool-via-odbc-for-analysis---optional)
-9. [Other things to try - optional](https://github.com/hortonworks-gallery/hdp22-twitter-demo#other-things-to-try-analyze-any-kind-of-tweet---optional)
-10. [Reset demo](https://github.com/hortonworks-gallery/hdp22-twitter-demo#reset-demo)
-11. [Run demo on cluster](https://github.com/hortonworks-gallery/hdp22-twitter-demo#run-demo-on-cluster)
+<!--1. [Option 1: Setup demo using prebuilt VM based on HDP 2.3 sandbox](https://github.com/hortonworks-gallery/hdp22-twitter-demo#option-1-setup-demo-using-prebuilt-vm-based-on-hdp-23-sandbox)-->
+<!--2. [Option 2: Setup demo via scripts on vanilla HDP 2.3 sandbox](https://github.com/hortonworks-gallery/hdp22-twitter-demo#option-2-setup-demo-via-scripts-on-vanilla-hdp-23-sandbox)-->
+<!--3. [Kafka basics - optional](https://github.com/hortonworks-gallery/hdp22-twitter-demo#kafka-basics---optional)-->
+<!--4. [Run demo](https://github.com/hortonworks-gallery/hdp22-twitter-demo#run-twitter-demo) to monitor Tweets about S&P 500 securities in realtime-->
+<!--5. [Stop demo](https://github.com/hortonworks-gallery/hdp22-twitter-demo#to-stop-collecting-tweets)-->
+<!--5. [Troubleshooting](https://github.com/hortonworks-gallery/hdp22-twitter-demo#troubleshooting)-->
+<!--6. [Observe results](https://github.com/hortonworks-gallery/hdp22-twitter-demo#observe-results) in HDFS, Hive, Solr/Banana, HBase-->
+<!--7. [Use Zeppelin to create charts to analyze tweets - optional](https://github.com/hortonworks-gallery/hdp22-twitter-demo#use-zeppelin-to-create-charts-to-analyze-tweets)-->
+<!--8. [Import data into BI tools - optional](https://github.com/hortonworks-gallery/hdp22-twitter-demo#import-data-to-bi-tool-via-odbc-for-analysis---optional)-->
+<!--9. [Other things to try - optional](https://github.com/hortonworks-gallery/hdp22-twitter-demo#other-things-to-try-analyze-any-kind-of-tweet---optional)-->
+<!--10. [Reset demo](https://github.com/hortonworks-gallery/hdp22-twitter-demo#reset-demo)-->
+<!--11. [Run demo on cluster](https://github.com/hortonworks-gallery/hdp22-twitter-demo#run-demo-on-cluster)-->
 
 ---------------------
  
@@ -65,13 +65,14 @@ ssh root@sandbox.hortonworks.com
 ```
 - Start the demo by
 ```
-cd /root/hdp22-twitter-demo
+cd /root/hdp_nifi_twitter_demo
 ./start-demo.sh
 #once storm topology is submitted, press control-C
 
-#start kafka twitter producer
-./kafkaproducer/runkafkaproducer.sh
+#start Nifi processor
 
+1. Using Browser, go to http://sandbox.hortonworks.com:<port#>/nifi
+2. Upload 
 ```
 - [Observe results](https://github.com/hortonworks-gallery/hdp22-twitter-demo#observe-results) in HDFS, Hive, Solr/Banana, HBase
 
