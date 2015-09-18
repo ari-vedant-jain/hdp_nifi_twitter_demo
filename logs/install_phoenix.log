@@ -1,9 +1,0 @@
-Loaded plugins: fastestmirror, priorities
-Setting up Install Process
-Loading mirror speeds from cached hostfile
- * base: dist1.800hosting.com
- * epel: reflector.westga.edu
- * extras: mirror.millry.co
- * updates: reflector.westga.edu
-Package phoenix-4.4.0.2.3.0.0-2557.el6.noarch already installed and latest version
-Nothing to do
