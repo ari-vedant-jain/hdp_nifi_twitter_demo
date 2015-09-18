@@ -11,7 +11,7 @@
 <!--  - [Guilherme Braccialli](https://github.com/gbraccialli) for helping to maintain the code and adding sentiment analysis component -->
 <!--  - [Tim Veil](https://github.com/timveil) for developing the original banana dashboard-->
 
-Thanks to [Ryan Templeton](https://github.com/rtempleton) & [Paul Hargis](https://github.com/pmhargisNG10) with their help in building the demo. 
+Thanks to [Ryan Templeton](https://github.com/rtempleton) & [Paul Hargis](https://github.com/pmhargisNG10) with their help in troubleshooting. 
 
 This Demo is built by modifying the [Hortonworks Twitter Demo](https://github.com/hortonworks-gallery/hdp22-twitter-demo) 
 ------------------
