@@ -95,5 +95,4 @@ sudo -u hdfs hadoop fs -chmod 777 /tweets/staging
 
 echo "Setup complete. Logs available under /root/hdp_nifi_twitter_demo/logs"
 
-echo "Run start-demo.sh to submit the Storm Twitter topology. Once submitted, start the Twitter producer via kafkaproducer/runkafkaproducer.sh"
-
+echo "Run start-demo.sh to submit the Storm Twitter topology. Once submitted, go to the NiFi UI & run the Twitter-Kafka template
