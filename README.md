@@ -1,10 +1,7 @@
 ## NiFi Twitter Storm Demo with Banana Visualization
 
 
-<!--  - [Guilherme Braccialli](https://github.com/gbraccialli) for helping to maintain the code and adding sentiment analysis component -->
-<!--  - [Tim Veil](https://github.com/timveil) for developing the original banana dashboard-->
-
-Thanks to [Ryan Templeton](https://github.com/rtempleton) & [Paul Hargis](https://github.com/pmhargisNG10) for their help with troubleshooting. 
+Thanks to [Ryan Templeton](https://github.com/rtempleton) for their help with troubleshooting. 
 
 This Demo is built by modifying the [Hortonworks Twitter Demo](https://github.com/hortonworks-gallery/hdp22-twitter-demo) 
 ------------------
@@ -12,7 +9,7 @@ This Demo is built by modifying the [Hortonworks Twitter Demo](https://github.co
 #### Purpose: Monitor Twitter stream for S&P 500 companies to identify & act on unexpected increases in tweet volume
 
 - Ingest: 
-Listen for Twitter streams related to S&P 500 companies 
+Listen for Twitter streams related to Hashtags input in NiFi Garden Hose (GetHTTP) processor 
 - Processing:
   - Monitor tweets for unexpected volume
   - Volume thresholds managed in HBASE
