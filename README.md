@@ -3,9 +3,9 @@
 
 Thanks to [Ryan Templeton](https://github.com/rtempleton) for their help with troubleshooting. 
 
-This Demo is built by modifying the [Hortonworks Twitter Demo](https://github.com/hortonworks-gallery/hdp22-twitter-demo) 
+This Demo is built for Hortonworks HDP 2.3 Sandbox. 
 ------------------
-
+This is based on the [Hortonworks Twitter Demo](https://github.com/hortonworks-gallery/hdp22-twitter-demo) 
 #### Purpose: Monitor Twitter stream for S&P 500 companies to identify & act on unexpected increases in tweet volume
 
 - Ingest: 
