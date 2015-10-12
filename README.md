@@ -6,7 +6,7 @@ Thanks to [Ryan Templeton](https://github.com/rtempleton) for their help with tr
 This Demo is built for Hortonworks HDP 2.3 Sandbox. 
 ------------------
 This is based on the [Hortonworks Twitter Demo](https://github.com/hortonworks-gallery/hdp22-twitter-demo) 
-#### Purpose: Monitor Twitter stream for S&P 500 companies to identify & act on unexpected increases in tweet volume
+#### Purpose: Monitor Twitter stream for the procided Hastags & act on unexpected increases in tweet volume
 
 - Ingest: 
 Listen for Twitter streams related to Hashtags input in NiFi Garden Hose (GetHTTP) processor 
