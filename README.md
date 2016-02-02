@@ -210,6 +210,18 @@ http://sandbox.hortonworks.com:8744/
 storm kill Twittertopology
 ```
 
+#### Short steps / Breadcrumbs: ####
+1. SSH into the sandbox: ssh root@sandbox….
+2. There is an xml file in the nifi-template folder. Scp the file to your local disk.
+3. Start nifi: nifi.sh start
+4. Go to sandbox.hortonworks.com:9090/nifi & upload the template
+5. Add the Access Keys from your Twitter Developer account.
+6. Meanwhile, start solr & banana: sh ~/setup-scripts/restart_solr_banana.sh
+7. Start Storm topology: sh ~/twittertopology/runtopology.sh
+8. Once topology has started, hit play on the NiFi dashboard
+9. Go to sandbox.hortonworks.com:8983/banana
+
+
 ------------------
 
 
